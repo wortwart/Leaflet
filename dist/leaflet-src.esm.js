@@ -1,5 +1,5 @@
 /* @preserve
- * Leaflet 1.9.4+2+main.3ff49ee, a JS library for interactive maps. https://leafletjs.com
+ * Leaflet 1.9.4+2+main.d96ec4f, a JS library for interactive maps. https://leafletjs.com
  * (c) 2010-2026 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 
@@ -10784,6 +10784,9 @@ var Tooltip = DivOverlay.extend({
 	},
 
 	_updatePosition: function () {
+		if (!this || !this._map) {
+			return;
+		}
 		var pos = this._map.latLngToLayerPoint(this._latlng);
 		this._setPosition(pos);
 	},
