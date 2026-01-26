@@ -193,6 +193,9 @@ export var Tooltip = DivOverlay.extend({
 	},
 
 	_updatePosition: function () {
+		if (!this || !this._map) {
+			return;
+		}
 		var pos = this._map.latLngToLayerPoint(this._latlng);
 		this._setPosition(pos);
 	},
