@@ -1,6 +1,6 @@
 /* @preserve
- * Leaflet 1.9.4+2+main.96a9b5f, a JS library for interactive maps. https://leafletjs.com
- * (c) 2010-2025 Vladimir Agafonkin, (c) 2010-2011 CloudMade
+ * Leaflet 1.9.4+2+main.3ff49ee, a JS library for interactive maps. https://leafletjs.com
+ * (c) 2010-2026 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 
 (function (global, factory) {
@@ -10803,6 +10803,9 @@
   	},
 
   	_animateZoom: function (e) {
+  		if (!this || !this._map) {
+  			return;
+  		}
   		var pos = this._map._latLngToNewLayerPoint(this._latlng, e.zoom, e.center);
   		this._setPosition(pos);
   	},
